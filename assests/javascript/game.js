@@ -26,7 +26,7 @@ var domLosses = document.getElementById("losses");
 function newGame() {
 
     gameRunning = true;
-    guessLeft =12;
+    guessesLeft =12;
     pickedWordPlaceHolderArray = [];
     guessedLetterBank = [];
     incorrectLetterBank = [];
@@ -57,10 +57,11 @@ function newGame() {
 }
 
 function letterGuess(letter) {
-    console.log(letterGuess);
+    console.log(letter);
     // running game inside this funtion
     
-    if (gameRunning === true && guessLetterBank.indexof(letter) === -1) {
+    if (gameRunning === true && guessedLetterBank.indexOf(letter) === -1) {
+
         guessedLetterBank.push(letter);
         
     //for loop checking if guessed letter is a lowercased letter and if it matches picked word
@@ -92,7 +93,7 @@ function checkIfCorrect(letter) {
 }
 
 function checkLoss(){
-    if (guessLeft === 0) {
+    if (guessesLeft === 0) {
         losses++;
         gameRunning = false; 
         domLosses.textContent = losses;
@@ -103,28 +104,29 @@ function checkLoss(){
 }
 
 function checkWin() {
-    if (pickedWord.toLowerCase() === pickedPlaceHolderArray.join("").toLowerCase()) {
+    if (pickedWord.toLowerCase() === pickedWordPlaceHolderArray.join("").toLowerCase()) {
         wins++;
         gameRunning = false;
         domWins.textContent = wins;
+        alert("You won!")
         
     }
     
 }
 
 
-// Adding event listener to start new game on button
 
-// domNewGameButton.addEventListener("click", newGame);
 
 domNewGameButton.addEventListener("click", newGame);
 
-// domNewGameButton.onClick = newGame;
+
 
 // adding on key up event for computer to see what keys are pushed
 
 document.onkeyup = function (event){
-    if (event.keyCode >=65 && event.keycode <=90){
+    console.log(event.keyCode)
+    if (event.keyCode >=65 && event.keyCode <=90){
+        console.log(event)
         letterGuess(event.key);
     } 
            
