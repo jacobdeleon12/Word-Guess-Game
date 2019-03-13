@@ -1,0 +1,24 @@
+body{
+    background: url(../images/arches.png) repeat;
+    color: azure;
+}
+
+#jumbo{
+    background-color: #404346;
+}
+
+
+#new-game-button{
+    background-color: #756b7e;
+    border: #6c5b7b
+
+}
+
+#new-game-button:hover{
+    background: #9c85af;
+    color: white;
+}
+
+#container-id{
+    background-color: #404346;;
+}

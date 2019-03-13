@@ -98,6 +98,7 @@ function checkLoss(){
         gameRunning = false; 
         domLosses.textContent = losses;
         domPlaceHolders.textContent = pickedWord;
+        alert("Sorry! You lose!")
     }
     checkWin();
 
@@ -108,7 +109,7 @@ function checkWin() {
         wins++;
         gameRunning = false;
         domWins.textContent = wins;
-        alert("You won!")
+        alert("You Won!")
         
     }
     
