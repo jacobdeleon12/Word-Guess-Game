@@ -85,14 +85,14 @@ function checkIfCorrect(letter) {
     pickedWordPlaceHolderArray.indexOf(letter.toUpperCase())=== -1){
 
         guessesLeft --;
-        incorrectLetterBank.push(letter);
+        incorrectLetterBank.push(letter.toUpperCase());
         domGuessedLetters.textContent = incorrectLetterBank.join(" ");
         domGuessesLeft.textContent = guessesLeft;
     }
-    checkLoss();
+    
 }
 
-function checkLoss(){
+document.onkeyup = function (event){
     if (guessesLeft === 0) {
         losses++;
         gameRunning = false; 
@@ -100,22 +100,21 @@ function checkLoss(){
         domPlaceHolders.textContent = pickedWord;
         alert("Sorry! You lose!")
     }
-    checkWin();
-
-}
-
-function checkWin() {
+  
     if (pickedWord.toLowerCase() === pickedWordPlaceHolderArray.join("").toLowerCase()) {
         wins++;
         gameRunning = false;
         domWins.textContent = wins;
         alert("You Won!")
         
+        // if (pickedWord === wordBank[0]) {
+        //     document.getElementById("centerImg").src="../Word-Guess-Game/assests/images/flag.png";
+        // }
     }
+
+    
     
 }
-
-
 
 
 domNewGameButton.addEventListener("click", newGame);
@@ -124,7 +123,7 @@ domNewGameButton.addEventListener("click", newGame);
 
 // adding on key up event for computer to see what keys are pushed
 
-document.onkeyup = function (event){
+document.onkeydown = function (event){
     console.log(event.keyCode)
     if (event.keyCode >=65 && event.keyCode <=90){
         console.log(event)

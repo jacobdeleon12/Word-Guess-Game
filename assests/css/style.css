@@ -17,6 +17,7 @@ body{
 #new-game-button:hover{
     background: #9c85af;
     color: white;
+    cursor:pointer;
 }
 
 #container-id{
