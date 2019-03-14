@@ -1,25 +1,34 @@
-body{
+body {
     background: url(../images/arches.png) repeat;
     color: azure;
 }
 
-#jumbo{
+#jumbo {
     background-color: #404346;
 }
 
-
-#new-game-button{
+#new-game-button {
     background-color: #756b7e;
     border: #6c5b7b
-
 }
 
-#new-game-button:hover{
+#new-game-button:hover {
     background: #9c85af;
     color: white;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#container-id{
-    background-color: #404346;;
+#container-id {
+    background-color: #404346;
+    ;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #404346;
+    color: white;
+    text-align: center;
 }
